@@ -21,7 +21,6 @@ public class AuthenticationSpringBootApplication {
 		return user;
 	}
 
-	@CrossOrigin("http://localhost:4200")
 	@RequestMapping("/resource")
 	public Map<String,Object> home() {
 		Map<String,Object> model = new HashMap<String,Object>();
