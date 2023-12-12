@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -13,6 +14,12 @@ import java.util.UUID;
 @SpringBootApplication
 @RestController
 public class AuthenticationSpringBootApplication {
+
+
+	@RequestMapping("/user")
+	public Principal user(Principal user) {
+		return user;
+	}
 
 	@CrossOrigin("http://localhost:4200")
 	@RequestMapping("/resource")
@@ -22,6 +29,7 @@ public class AuthenticationSpringBootApplication {
 		model.put("content", "Hello World");
 		return model;
 	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(AuthenticationSpringBootApplication.class, args);
 	}
